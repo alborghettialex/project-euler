@@ -3,9 +3,16 @@
 // The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 99.
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
-fn is_palindrome(n: u32) -> bool {
-    let s = n.to_string();
-    s.chars().eq(s.chars().rev())
+fn is_palindrome(mut n: u32) -> bool {
+    let original = n;
+    let mut reversed = 0;
+
+    while n > 0 {
+        reversed = reversed * 10 + n % 10;
+        n /= 10;
+    }
+
+    original == reversed
 }
 
 fn main() {
