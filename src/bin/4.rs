@@ -10,9 +10,12 @@ fn is_palindrome(n: u32) -> bool {
 
 fn main() {
     let mut max_pal_found = 0;
-    for n in (1..999).rev() {
-        for m in (1..999).rev() {
+    for n in (1..=999).rev() {
+        for m in (1..=n).rev() {
             let prod = n * m;
+            if prod < max_pal_found {
+                break;
+            }
             if is_palindrome(n * m) {
                 if prod > max_pal_found {
                     max_pal_found = prod;
