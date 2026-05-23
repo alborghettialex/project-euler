@@ -15,7 +15,7 @@ fn main() {
             if a + b < 1000 {
                 let c = 1000 - a - b;
                 if is_pythagorean(a, b, c) {
-                    println!("a={}, b={}, c={}, abc={}", a, b, c, a * b * c);
+                    println!("a={}, b={}, c={}, abc={}", a, b, c, a * b * c); // 31875000
                     break 'outer;
                 }
             } else {
