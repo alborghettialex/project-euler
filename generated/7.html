@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Problem 7</title>
+        <link rel="stylesheet" href="../static/style.css" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-rust.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <a class="back" href="index.html">← Back</a>
+
+            <div class="eyebrow">Problem 7</div>
+
+            <h1>Problem 7</h1>
+
+            <div class="answer">Answer: 104743</div>
+
+            <div class="description"><p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+What is the 10,001st prime number?</p></div>
+
+            <div class="section-title">Solution</div>
+
+            <div class="code-shell">
+                <div class="code-bar">
+                    <span>Rust</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        Copy
+                    </button>
+                </div>
+
+                <pre><code class="language-rust">// # 7
+// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+// What is the 10,001st prime number?
+//
+// Answer: 104743
+
+fn is_prime(n: u32) -&gt; bool {
+    if n == 1 {
+        return false;
+    }
+
+    let mut d = 1;
+    while d &lt;= n.isqrt() {
+        d += 1;
+        if n % d == 0 {
+            return false;
+        }
+    }
+    return true;
+}
+fn main() {
+    let mut pos = 6;
+    let mut n = 13;
+
+    loop {
+        n += 2;
+        if is_prime(n) {
+            pos += 1;
+            if pos == 10_001 {
+                break;
+            }
+        }
+    }
+    println!(&quot;{}&quot;, n)
+}
+</code></pre>
+            </div>
+        </div>
+
+        <script>
+            function copyCode(btn) {
+                const code = btn
+                    .closest(".code-shell")
+                    .querySelector("code").innerText;
+                navigator.clipboard.writeText(code);
+                btn.textContent = "Copied";
+                setTimeout(() => (btn.textContent = "Copy"), 1200);
+            }
+        </script>
+    </body>
+</html>

@@ -5,6 +5,8 @@
 // (1 + 2 + ... + 10)^2 = 55^2 = 3025.
 // Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+//
+// Answer: 25164150
 
 fn main() {
     let mut sum_of_squares = 0;
@@ -16,5 +18,5 @@ fn main() {
     }
 
     squares_of_sum = i32::pow(squares_of_sum, 2);
-    println!("{}", squares_of_sum - sum_of_squares) // 25164150
+    println!("{}", squares_of_sum - sum_of_squares)
 }

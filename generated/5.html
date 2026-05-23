@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Problem 5</title>
+        <link rel="stylesheet" href="../static/style.css" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-rust.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <a class="back" href="index.html">← Back</a>
+
+            <div class="eyebrow">Problem 5</div>
+
+            <h1>Problem 5</h1>
+
+            <div class="answer">Answer: 232792560</div>
+
+            <div class="description"><p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20?</p></div>
+
+            <div class="section-title">Solution</div>
+
+            <div class="code-shell">
+                <div class="code-bar">
+                    <span>Rust</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        Copy
+                    </button>
+                </div>
+
+                <pre><code class="language-rust">// # 5
+// 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+// What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20?
+//
+// Answer: 232792560
+
+fn divisible_1_20(n: u32) -&gt; bool {
+    n % 19 == 0
+        &amp;&amp; n % 18 == 0
+        &amp;&amp; n % 17 == 0
+        &amp;&amp; n % 16 == 0
+        &amp;&amp; n % 15 == 0
+        &amp;&amp; n % 14 == 0
+        &amp;&amp; n % 13 == 0
+        &amp;&amp; n % 11 == 0
+}
+
+fn main() {
+    let mut min_n_found = 2520;
+    loop {
+        min_n_found += 2520;
+        if divisible_1_20(min_n_found) {
+            break;
+        }
+    }
+    println!(&quot;{}&quot;, min_n_found)
+}
+</code></pre>
+            </div>
+        </div>
+
+        <script>
+            function copyCode(btn) {
+                const code = btn
+                    .closest(".code-shell")
+                    .querySelector("code").innerText;
+                navigator.clipboard.writeText(code);
+                btn.textContent = "Copied";
+                setTimeout(() => (btn.textContent = "Copy"), 1200);
+            }
+        </script>
+    </body>
+</html>
