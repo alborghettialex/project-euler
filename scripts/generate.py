@@ -32,7 +32,7 @@ def extract(field: str, text: str, default=""):
 
 items = []
 
-for file in sorted(SRC.glob("*.rs")):
+for file in sorted(SRC.glob("*.rs"), key=lambda p: int(p.stem)):
     source = file.read_text()
 
     header = parse_header(source)
