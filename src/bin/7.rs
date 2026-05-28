@@ -9,6 +9,10 @@ fn is_prime(n: u32) -> bool {
         return false;
     }
 
+    if n == 2 {
+        return true;
+    }
+
     let mut d = 1;
     while d <= n.isqrt() {
         d += 1;
