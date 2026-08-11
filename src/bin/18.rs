@@ -75,5 +75,5 @@ fn main() {
     }
 
     let max_sum = triangle[0][0];
-    println!("{}", max_sum);
+    println!("{}", max_sum); // 1074
 }
