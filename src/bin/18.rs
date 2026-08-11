@@ -2,7 +2,7 @@
 // By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
 // <center>
 // <b>3</b></span><br>
-// <b>7</b>4<br>
+// <b>7</b> 4<br>
 // 2 <b>4</b> 6<br>
 // 8 5 <b>9</b> 3
 // </center>
